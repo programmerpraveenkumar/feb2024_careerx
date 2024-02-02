@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <!-- title tag will be displayed in browser's tab -->
+        <title>test 123</title>
+    </head>    
+    <body>
+        <header>Sample Header</header>
+        <h1>Page Heading</h1>
+        <h2>Page Heading</h2>
+        <h5>Page Heading</h5>
+        <h6>Page Heading</h6>
+        
+        <!-- block elements & inline elements -->
+        <div>
+            <div>sasmple</div>
+            <section>some Content</section>
+        </div>
+
+        <section>
+            <div>Sample div</div>
+            <section>some Content</section>
+        </section>       
+        
+        <!-- <img src="https://images.pexels.com/photos/12730085/pexels-photo-12730085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /> -->
+        <a href="https://www.google.com" target="_blank">Click me to go to google</a>
+        
+        <!-- input from the user -->
+        <div>
+            <input type="text" placeholder="Enter Name"/>
+        </div>
+        
+        <div>
+            <input type="password" placeholder="Enter Password"/>
+        </div>
+        <div>
+            <input type="date" placeholder="Select dob"/>
+        </div>
+
+        <div>
+            Select Gender
+            <input type="radio" name="gender" />Male
+            <input type="radio"  name="gender" />Female
+        </div>
+        <div>
+            Select City
+            <input type="checkbox" name="city" />City1
+            <input type="checkbox"  name="city" />City2
+            <input type="checkbox"  name="city" />City3            
+        </div>
+        <div>
+            <select>
+                <option value="1">Page 1</option>
+                <option  value="2">Page 2</option>
+                <option  value="3">Page 3</option>
+                <option  value="4">Page 4</option>
+            </select>
+        </div>
+
+        <input type="button" value="Click me here">       
+        <input type="submit" value="Click me here">
+        <button>Click me here</button>
+
+        <!-- to submit the data to server -->
+        <form action="server_url" method="POST">
+            <input type="text" placeholder="Enter Name"/>
+            <input type="submit"/>
+        </form>
+
+        <video controls src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+        
+        </video>
+        <audio controls src="https://download.samplelib.com/mp3/sample-3s.mp3">
+        
+        </audio>
+
+        <footer>Sample Content</footer>
+    </body>
+</html>
+
+
+<!-- 
+    block
+        it takes full width.irrespective of content
+        it can hold other block and inline
+        Ex:
+            div,section,header,footer,h1 to h6
+
+    inline
+        it takes width oly for the content.
+        it  can hold oly inline.
+        input,a,img,button,span,audio,video
+ -->
