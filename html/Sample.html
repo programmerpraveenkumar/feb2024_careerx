@@ -2,11 +2,66 @@
     <head>
         <!-- title tag will be displayed in browser's tab -->
         <title>test 123</title>
+        <!-- internal css -->
+        <style>
+            /* tagname selector*/
+            h1{
+                color: red;
+            }
+            /* label{
+                color:blue
+            } */
+            /* classname.it starts with dot(.)*/
+            .blueColor{
+                color: blue;
+            }
+            /* 
+            id.it starts with #.
+            it shuld be unique and used only one time
+             in html page.
+            */
+            #header_id{
+                color: #00ffbf;
+            }
+        </style>
     </head>    
     <body>
-        <header>Sample Header</header>
+
+
+        <ul>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ul>
+
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ol>
+        
+        <textarea placeholder="Enter Message"></textarea>
+        <table bordercolor="red" border="10">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                </tr>    
+            </thead>
+            <tr>
+                <td>Name 1</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Name 1</td>
+                <td>12</td>
+            </tr>
+        </table>
+
+        <header id="header_id">Sample Header</header>
         <h1>Page Heading</h1>
-        <h2>Page Heading</h2>
+        <h1>Page Heading</h1>
+        <h2 class="blueColor">Page Heading</h2>
         <h5>Page Heading</h5>
         <h6>Page Heading</h6>
         
@@ -16,6 +71,7 @@
             <section>some Content</section>
         </div>
 
+        
         <section>
             <div>Sample div</div>
             <section>some Content</section>
@@ -37,12 +93,12 @@
         </div>
 
         <div>
-            Select Gender
+            <label>Select Gender</label>
             <input type="radio" name="gender" />Male
             <input type="radio"  name="gender" />Female
         </div>
         <div>
-            Select City
+            <label class="blueColor">Select City</label>
             <input type="checkbox" name="city" />City1
             <input type="checkbox"  name="city" />City2
             <input type="checkbox"  name="city" />City3            
@@ -66,7 +122,7 @@
             <input type="submit"/>
         </form>
 
-        <video controls src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+        <video width="150" height="150" controls src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
         
         </video>
         <audio controls src="https://download.samplelib.com/mp3/sample-3s.mp3">
@@ -74,11 +130,14 @@
         </audio>
 
         <footer>Sample Content</footer>
+        <iframe src="sample2.html"></iframe>
     </body>
+    
 </html>
 
 
 <!-- 
+    iframe,ul,li,table,textarea
     block
         it takes full width.irrespective of content
         it can hold other block and inline
