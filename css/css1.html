@@ -11,6 +11,7 @@
                 text-decoration:line-through;
               text-align: center;
                 background-color: aqua;
+                width: 50%;
             }
             .txt2{
                 color: rgb(0, 255, 128) ;
@@ -32,15 +33,103 @@
                 text-transform:capitalize;
                 text-indent: 50px;
                 word-spacing: 15px;
-                border: 5px dotted #48e51378;
+                border: 5px solid #48e51378;
+
+                /* remove border in top */
+                border-top:none;
+
+                 /* 
+                 border-right: 5px solid #48e51378; */
+                /* border-style: solid;
+                border-width: 5px;
+                border-color: #48e51378; */
+            }
+            .div_class{
+                width: 50%;
+                height: 150px;;
+                background-color: aqua;
+                overflow-y: scroll;
+            }
+            .div2{
+                /* margin: 10px */
+                /* margin-top:10px; */
+
+                /* top&bottom right&left */
+                margin: 10px 20px;
+
+                /* top right&left bottom */
+                margin: 10px 20px 30px;
+
+                /* clock wise->top right bottom left */
+                margin: 10px 20px 30px 40px;
+
+                width: 50%;
+                background-color: violet;
+            }
+            .div3{
+                background-color: blue;
+
+                /* all 4 directions */
+                /* padding: 10px; */
+                /* top&bottom right&left */
+                padding: 35px 10px;
+                text-align: center;
+                color: #fff;
+                height: 700px;
+            }
+            .clock{
+                position: fixed;
+                top:10px;
+                right:50px;
+                background-color: burlywood;
+                padding: 10px;
+            }
+            .clock2{
+                position: absolute;
+                left:50px;
+                bottom:50px;
+                background-color: burlywood;
+                padding: 10px;
+            }
+            .clock_parent{
+                position: relative;
+            }
+            .clock3{
+                position: absolute;
+                left:50px;
+                bottom:50px;
+                background-color: rgb(168, 222, 135);
+                padding: 10px;
+            }
+            .header{
+                position: sticky;
+                top:10px;
+                background-color: red;
+                padding: 10px;;
+                text-align: center;
+            }
+            .img_parent{
+                position: relative;
+            }
+            .img_txt{
+                position: absolute;
+                top:150px;
+                left:150px;
+                background-color: red;
+                padding: 10px;
             }
     </style>
     <title>Document</title>
 </head>
 <body>
+
+    <div class="clock">8:01</div>
+    <div class="clock2">9:01</div>
     <h1 class="txt1">This is heading</h1>
     <h2 class="txt2">Ths is h2</h2>
-
+    <header class="header">
+            this is header
+    </header>
     <a class="link_class" href="http://www.google.com">Click to go to google</a>
     <p class="para">Lorem ipsum dolor sit amet, 
         consectetur adipisicing elit.
@@ -50,5 +139,38 @@
          eius debitis labore eveniet voluptas quibusdam dolore rerum necessitatibus in tenetur a doloremque?
         Lorem ipsum dolor, 
         sit amet consectetur adipisicing elit. Dolorum deserunt perferendis debitis fugiat animi dolores in laudantium, quas officia. Ut cum perspiciatis consectetur quos nam qui voluptatem debitis, similique voluptates.</p>
+        
+        <div class="div_class">
+            consectetur adipisicing elit.
+         Maxime modi quae, 
+         repellendus ex cumque quas 
+         temporibus voluptatibus, 
+         eius debitis labore eveniet voluptas quibusdam dolore rerum necessitatibus in tenetur a doloremque?
+        Lorem ipsum dolor, 
+        sit amet consectetur adipisicing elit. Dolorum deserunt perferendis debitis fugiat animi dolores in laudantium, quas officia. Ut cum perspiciatis consectetur quos nam qui voluptatem debitis, similique voluptates
+        consectetur adipisicing elit.
+         Maxime modi quae, 
+         repellendus ex cumque quas 
+         temporibus voluptatibus, 
+         eius debitis labore eveniet voluptas quibusdam dolore rerum necessitatibus in tenetur a doloremque?
+        Lorem ipsum dolor, 
+        sit amet consectetur adipisicing elit. Dolorum deserunt perferendis debitis fugiat animi dolores in laudantium, quas officia. Ut cum perspiciatis consectetur quos nam qui voluptatem debitis, similique voluptates
+        consectetur adipisicing elit.
+         Maxime modi quae, 
+         repellendus ex cumque quas 
+         temporibus voluptatibus, 
+         eius debitis labore eveniet voluptas quibusdam dolore rerum necessitatibus in tenetur a doloremque?
+        Lorem ipsum dolor, 
+        sit amet consectetur adipisicing elit. Dolorum deserunt perferendis debitis fugiat animi dolores in laudantium, quas officia. Ut cum perspiciatis consectetur quos nam qui voluptatem debitis, similique voluptates
+        </div>
+    <div class="div2">hi wrojwejrj </div>
+    <div class="div3">hi wrojwejrj </div>
+    <div class="clock_parent">
+        <div class="clock3">9:01</div>
+    </div>
+    <div class="img_parent">
+        <img class="img" src="https://blog.hubspot.com/hs-fs/hubfs/image8-2.jpg?width=600&name=image8-2.jpg" alt="">
+        <a class="img_txt" href="http://google.com">www.google.com</a>
+    </div>
 </body>
 </html>

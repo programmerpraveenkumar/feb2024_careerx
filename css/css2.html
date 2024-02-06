@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+            .div1{
+               
+                padding: 50px;
+
+                /* it hides the element from the dom */
+                /* display: none; */
+
+                /* to show the element */
+                display: block;
+            }
+
+            .span_class{
+                background-color: blueviolet;
+                display: block;
+            }
+            .highlight{
+                color: red;
+            }
+            #section1 .div1{
+                    background-color: blue;
+            }
+            #section2 .div1{
+                
+            }
+            .red_bg{
+                background-color: red;
+            }
+            /* only to  direct children */
+            #div3 > p{
+                background-color: yellow;
+            }
+              
+    </style>
+    <title>Document</title>
+</head>css/css2.html
+<body>
+<div class="div1">this is div</div>
+<div class="div1 red_bg">this is div</div>
+<div class="div1">this is div</div>
+<span class="span_class  red_bg">this is span</span>
+<p>
+    Lorem ipsum dolor sit amet, consectetur <span class="highlight">adipisicing</span> elit. Possimus, nulla rerum doloribus deleniti sapiente aliquam earum distinctio voluptatem reiciendis quasi deserunt accusamus! Repellendus magnam soluta atque natus tempore ratione similique.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero deleniti corporis quisquam harum tenetur perspiciatis obcaecati tempore asperiores distinctio? Incidunt est officiis cum vel dolores sint exercitationem quia dolorem accusamus.
+</p>
+<section id="section1">
+    <div class="div1">Section1-div1</div>
+</section>
+
+<section id="section2">
+    <div class="div1">section2-div1</div>
+</section>
+
+<div id="div3">
+    <p>this is content -1 <div>fhrh</div> </p>
+
+    <div>
+        <p>this is content -2 </p>
+    </div>
+
+    <div>
+        <p>this is content -3 </p>
+    </div>
+
+</div>
+
+</body>
+</html>
