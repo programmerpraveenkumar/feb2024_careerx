@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent_div{
+            background-color: bisque;
+            border: 2px solid #000;
+            overflow: hidden;
+        }
+        .parent_div .divf{
+            float: left;
+            width: 20%;
+            background-color: red;
+            border: 1px solid #000;
+        }
+        .parent_div  .divr{
+            float: right;
+            width: 20%;
+            background-color: red;
+            border: 1px solid #000;
+        }
+
+        .parent_div2{
+            display: flex;
+            flex-direction: column;   
+            flex-wrap: wrap;
+            border: 2px solid #6b2020;
+        }
+        .parent_div2 div{
+            width: 20%;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent_div">
+        <div class="divf">this is div1</div>
+        <div  class="divr">this is div2</div>
+        <div  class="divr">this is div3</div>
+        <div  class="divf">this is div4</div>
+        <div  class="divr">this is div2</div>
+        <div  class="divr">this is div3</div>
+        <div  class="divf">this is div4</div>
+    </div>
+
+    <div class="parent_div2">
+        <div class="divf">this is div1</div>
+        <div  class="divr">this is div2</div>
+        <div  class="divr">this is div3</div>
+        <div  class="divf">this is div4</div>
+        <div  class="divr">this is div2</div>
+        <div  class="divr">this is div3</div>
+        <div  class="divf">this is div4</div>
+        <div  class="divr">this is div2</div>
+        <div  class="divr">this is div3</div>
+        <div  class="divf">this is div4</div>
+    </div>
+
+    
+</body>
+</html>

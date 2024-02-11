@@ -1,0 +1,35 @@
+body{
+    font-size: 20px;
+}
+header{
+    border-bottom:1px solid #000 ;
+    font-size: 1em;
+}
+header ul li{
+    display: inline-block;
+    margin:10px;
+}
+
+.content-section{
+    display: flex;
+    font-size: 1em;
+}
+.content-section div{
+flex: 1;
+height: 50vh;
+background-color: rgba(0, 34, 255, 0.515);
+border: 1px solid;
+justify-content: center;
+align-items: center;
+display: flex;
+color: #fff;
+}
+.content-section div.center_div{
+    flex:2;
+}
+footer{
+    font-size: 1em;
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 10px;;
+}

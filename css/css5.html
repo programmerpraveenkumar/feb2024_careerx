@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+
+        .parent_div{
+            display: grid;
+            grid-template-columns: auto auto;            
+        }
+        .parent_div div{
+            text-align: center;  
+            border: 1px solid #000;
+        } 
+        .calendar{
+            width: 30%;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto;
+        }
+        /* whn mouse is over on the element */
+        .link_google:hover{
+                color: #000;
+        }
+        h1:hover{
+            color: #dc1f1f;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .input:focus-visible{
+                border:3px solid #000;
+                outline: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent_div">
+        <div class="divf">this is div1</div>
+        <div  class="divr">this is div2</div>
+        <div  class="divr">this is div3</div>
+        <div  class="divf">this is div4</div>
+        <div  class="divr">this is div2</div>
+        <div  class="divr">this is div3</div>
+        <div  class="divf">this is div4</div>
+    </div>
+
+    <h1>Calendar</h1>
+    <div class="calendar">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+        <div>-</div>
+    </div>
+    <a class="link_google" href="http://google.com">google.com</a>
+    <input type="text" placeholder="enter name" class="input">
+    
+</body>
+</html>

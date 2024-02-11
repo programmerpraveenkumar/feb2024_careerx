@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 15px;;
+        }
+        div{
+            font-size: 1rem;;
+        }
+        
+       
+
+        .parent_div2{
+            
+            display: flex;     
+            border: 2px solid #6b2020;
+        }
+        .parent_div2 div{            
+            flex: 1; 
+            border: 1px solid #000;
+            height: 50vh;;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+        .divr.div3{
+            flex:2;
+            color: aliceblue;
+        }
+        .div{
+            position: fixed;
+            right: 110px;
+            top:70px;
+            background: brown;
+            padding: 10px;
+            opacity: 0.8;
+            z-index: 10;
+            
+        }
+        .div2{
+            margin-top:10px;
+            background-color: rgb(0, 136, 255);
+            width: 20%;
+            max-width: 150px;
+        }
+        
+    </style>
+</head>
+<body>
+  
+<div class="div">hi im the content</div>
+    <div class="parent_div2">
+        <div class="divf" style="background-color: red;">this is div1</div>
+        <!-- <div  class="divr" style="background-color: rgb(0, 255, 17);">this is div2</div> -->
+        <div  class="divr div3" style="background-color: rgb(170, 0, 255);">this is div3</div>
+        <div  class="divr" style="background-color: rgb(77, 255, 0);">this is div3</div>       
+    </div>
+
+    <div class="div2">
+        this is div Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ex quisquam quasi laborum quidem, reiciendis fuga ab eligendi architecto harum fugiat earum. Aliquam dolorem, repellendus tempore praesentium odit voluptatem commodi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. In harum, deserunt ipsa quia magnam dolore architecto laboriosam necessitatibus voluptate! Dolorem recusandae id dolor ab adipisci blanditiis ipsa ducimus quidem officiis?
+    </div>
+
+    
+</body>
+</html>
