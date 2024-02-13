@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-            div{
+            .content{
                 background-color: green;
                 height: 150px;;
                 width: 50%;
+                color: #fff;
+                font-size: 25px;;
             }
-            /* media query */
+            /* media query for mobile devices */
             @media only screen and (max-width: 600px) {
-                div{
-                    background-color: red;
+                .content{             
+                    width: 100%;
+                    font-size: 18px;;
                 }
             }
     </style>
     <body>
-            <div></div>
+        <h1>page title</h1>
+            <div class="content">
+                this is the content for the div
+            </div>
     </body>
 </html>

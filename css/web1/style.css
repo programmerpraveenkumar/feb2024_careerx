@@ -13,6 +13,7 @@ header ul li{
 .content-section{
     display: flex;
     font-size: 1em;
+    flex-direction: row;
 }
 .content-section div{
 flex: 1;
@@ -32,4 +33,9 @@ footer{
     text-align: center;
     background-color: blanchedalmond;
     padding: 10px;;
+}
+@media only screen and (max-width:600px) {
+    .content-section{       
+        flex-direction: column;
+    }
 }
