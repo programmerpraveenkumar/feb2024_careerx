@@ -17,7 +17,7 @@ header ul li{
 }
 .content-section div{
 flex: 1;
-height: 50vh;
+height: 150vh;
 background-color: rgba(0, 34, 255, 0.515);
 border: 1px solid;
 justify-content: center;
