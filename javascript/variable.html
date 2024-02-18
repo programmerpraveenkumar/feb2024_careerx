@@ -14,6 +14,7 @@
 
         //variable declaration
         var firstName = "your first name";
+        var firstName  ="new name updated";//redeclare is ok
         var lastName = "asdads";
         firstName = "new name";//update
         const email = "someemail@gmail.com";
@@ -24,6 +25,8 @@
 
         let num1 = "45";
         let num2 = 989;
+        //let num1 = 565;//redeclare is error for let
+        num1 = 455;
         let res = parseInt(num1)+num2;
         let res2 = num1-num2;
         console.log(res);
@@ -32,9 +35,47 @@
         console.error("this is error");
         console.info("this is info");
         console.debug("shkjh");
+        printMessage();
+        printMessage();
+        printMessage();
+        printMessage();
+        printMessage2();
+        add(45);
+        function printMessage(){
+            console.log("hi morning");
+        }
+        function printMessage2(){
+            console.log("good morning");
+        }
+        function printMessage2(){
+            console.log("good morninger");
+        }
 
-         
-
+        function add(a,b){
+            console.log(a,b);
+            let res = a+b;
+            console.log(res);
+        }
+        function calc(a,b,action){
+            if(action == "add"){
+                let res = a+b;
+                console.log(res);
+            }else if(action == "sub"){
+                let res = a-b;
+                console.log(res);
+            }else if(action == "mul"){
+                let res = a*b;
+                console.log(res);
+            }else{
+                console.log("no action found");
+            }
+            // console.log(a,b);
+            
+        }
+        calc(10,15,"add");
+        calc(10,15,"addition");
+        calc(20,15,"mul"); 
+        calc(20,15,"divide"); 
     </script>
 </head>
 <body>

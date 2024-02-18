@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //array of object
+        var  personDetail = [
+                {
+                    "name":"akshay",
+                    "mobile":4536,
+                    "address":"sample"                   
+                },{
+                    "name":"akshay1",
+                    "mobile":78987,
+                    "address":"sample"                   
+                },{
+                    "name":"akshay2",
+                    "mobile":1241,
+                    "address":"sample"                   
+                },{
+                   
+                    "mobile":5656,
+                    "address":"sample"                   
+                }
+        ];
+        for(let index in personDetail){
+            var personObj = personDetail[index];
+            console.log(index,personObj['name'],personObj['mobile']);
+        }
+
+        console.log("---------------------");
+        for(let index in personDetail){
+            var personObj = personDetail[index];    
+                    
+            for(let key in personObj){
+                console.log(index,personObj[key]);
+            }
+            console.log("---------------------");
+        }
+
+
+
+           </script>
+</head>
+<body>
+    
+</body>
+</html>

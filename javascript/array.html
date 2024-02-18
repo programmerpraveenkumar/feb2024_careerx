@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //array
+        let name = ["asd","wwdwd","wdtwd","wDWD","ilsudhipf"];
+        console.log(name);
+        console.log(name.length);
+        name.push("sadf");//adding the element to array
+        console.log(name);
+        // name.shift();//remove first element
+        console.log(name);
+
+        for(let index in name){
+            console.log(name[index]);
+        }
+        console.log("--------------------------");
+        
+        name.forEach(
+            function(ele){
+                console.log(ele);
+        }
+        );
+        
+        console.log("--------------------------");
+       for(let i = 0;i<name.length;i++) {
+        console.log(name[i]);
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
