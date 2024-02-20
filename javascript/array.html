@@ -6,28 +6,28 @@
     <title>Document</title>
     <script>
         //array
-        let name = ["asd","wwdwd","wdtwd","wDWD","ilsudhipf"];
+        let name = ["asd","wwdwd","wdtwd","wDWD","ilsudhipf",14,5];
         console.log(name);
-        console.log(name.length);
+        console.log(name.length);//total length of the element.
+        console.log(name[5]);//gets the element from the 5 position
         name.push("sadf");//adding the element to array
         console.log(name);
         // name.shift();//remove first element
-        console.log(name);
-
         for(let index in name){
             console.log(name[index]);
         }
         console.log("--------------------------");
-        
+
+        //some methods ill accept params as function.
         name.forEach(
             function(ele){
                 console.log(ele);
-        }
+            }
         );
-        
+                
         console.log("--------------------------");
        for(let i = 0;i<name.length;i++) {
-        console.log(name[i]);
+         console.log(name[i]);
        }
     </script>
 </head>

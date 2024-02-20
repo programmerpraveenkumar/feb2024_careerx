@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function printTxt(){
+            //getting the element by id;
+            let input_ele = document.getElementById("txt_input");
+            let value = input_ele.value;//read the value from the txtbox;
+            console.log(value);
+            //getting the element by id;
+            let ele = document.getElementById("h1_id");
+            // //writing into the html element.
+             ele.innerHTML = value;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt_input">  
+    <button onclick="printTxt()">click me</button>
+    <h1 id="h1_id">this is h1</h1>
+</body>
+</html>

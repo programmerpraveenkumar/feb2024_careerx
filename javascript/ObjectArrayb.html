@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //array of object
+        var  countryDetail = [
+            {
+                "countryName":"india",
+                "city":"mumbai"
+            },
+            {
+                "countryName":"usa",
+                "city":"texas"
+            }
+            ,
+            {
+                "countryName":"uk",
+                "city":"london"
+            }
+        ];
+
+        for(let cityIndex in countryDetail){
+            //console.log(countryDetail[cityIndex]['countryName'],countryDetail[cityIndex['city']]);
+            let cObj = countryDetail[cityIndex] ;
+            console.log(cObj['countryName'],cObj['city']);
+        }
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

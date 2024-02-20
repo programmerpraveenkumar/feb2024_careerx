@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function printMessage(){
+            //getting the element by id;
+            let ele = document.getElementById("h1_id");
+            //writing into the html element.
+            ele.innerHTML = "this is from javascript";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="h1_id"></h1>
+    <button onclick="printMessage()">click me</button>
+</body>
+</html>

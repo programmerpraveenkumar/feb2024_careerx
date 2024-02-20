@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         printMessage=()=>{
+            console.log("this is print message");
+        }
+        // printMessage();
+
+        //anonymous function
+        (function(){
+            console.log("this is function without name");
+        })();
+
+        (()=>{
+            console.log("this is arrow function without name");
+        })();
+
+    function showAlert(){
+        //js function to show the alert box in browser.
+        alert("20feb2024");
+    }
+        
+    </script>
+</head>
+<body>
+    <button onclick="showAlert()">Click me</button>
+    
+</body>
+</html>
