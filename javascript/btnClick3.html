@@ -6,15 +6,19 @@
     <title>Document</title>
     <script>
         function print(){
-            let input = document.getElementById("txt");
-            let val = input.value;//read the  value from input and assign to the variable,
+            let val = document.getElementById("txt").value;//read the  value from input and assign to the variable,
             console.log(val);
-
         }
     </script>
 </head>
 <body>
    <input type="text"id="txt">
-   <button onclick="print()">Click me</button>
+   <button id="rtdfgdf">Click me</button>
 </body>
+<script>
+    
+    document.getElementById('rtdfgdf').addEventListener('click',()=>{
+        print();
+    })
+</script>
 </html>

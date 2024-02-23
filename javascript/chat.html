@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sendMessage(){
+            let txtmsg = document.getElementById("msg_txt").value;       
+            if(txtmsg == ''){
+                return;//stop the execution.will not go further in the function
+            }
+
+            let p_tag = document.createElement('p');//<p></p>
+            p_tag.innerHTML = txtmsg;
+            
+            //adding the child with existing child in id="msg_list"
+            document.getElementById("msg_list").appendChild(p_tag);
+            document.getElementById("msg_txt").value = '';//assign the empty string to the textarea
+        }
+    </script>
+    <style>
+        .messagelist{
+            width: 50%;
+            height: 50vh;
+            border: 1px solid;
+        }
+        textarea{
+                width: 40%;
+                height: 50px;
+        }
+        button{
+            width: 5%;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div id="msg_list" class="messagelist">
+                
+
+        </div>
+
+        <div class="inputMessage">
+            <textarea name="" id="msg_txt" placeholder="enter Message"></textarea>
+            <button id="btn">Send</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("btn").addEventListener('click',()=>{
+            sendMessage();
+        })
+    </script>
+</body>
+</html>

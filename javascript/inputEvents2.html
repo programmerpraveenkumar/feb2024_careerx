@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        
+        onkeyDown
+        onkeyUp
+     -->
+     <script>
+    function print(val){
+            console.log(val);
+    }
+     </script>
+     
+</head>
+<body>
+    <input id="txt" type="text">
+    <div id="div_id">This is div</div>
+    <p id="p_id">this is para</p>
+    <script>
+        document.getElementById('txt').addEventListener('keyUp',(val)=>{         
+            print(val);
+        })
+
+        document.getElementById('div_id').addEventListener('click',()=>{         
+            alert("clicked");
+        })
+        document.getElementById('p_id').addEventListener('click',()=>{         
+            alert("clicked on para");
+        })
+
+    </script>
+</body>
+</html>

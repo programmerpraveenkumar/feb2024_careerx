@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById('num2').value;
+            if(num1 == ''){
+                document.getElementById("h1_id").innerHTML= "Num1 shuld not be empty";
+            }else if(num2 == ''){
+                document.getElementById("h1_id").innerHTML= "Num2 shuld not be empty";
+            }else{
+                let res = parseInt(num1)+parseInt(num2);//add the value and assign to the variable
+            let resSub = num1-num2;//add the value and assign to the variable
+            console.log(res);
+            console.log(resSub);
+            document.getElementById("h1_id").innerHTML= res;
+            document.getElementById("h1_id_1").innerHTML = resSub;
+            // let val = document.getElementById("txt").value;//read the  value from input and assign to the variable,
+            // console.log(val);
+            }
+            
+        }
+    </script>
+</head>
+<body>
+   <input type="text"id="num1">
+   <input type="text"id="num2">
+   <button onclick="add()">Click me</button>
+   <h1 id="h1_id"></h1>
+   <h1 id="h1_id_1"></h1>
+</body>
+</html>
