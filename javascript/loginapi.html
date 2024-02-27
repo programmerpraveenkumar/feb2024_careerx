@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <input type="text" id="email" placeholder="Enter Email">
+    <input type="text" id="password"  placeholder="Enter password">
+    <button id="login_btn">Login</button>
+    <h1 class="response"></h1>
+    <script>
+        document.querySelector("#login_btn").addEventListener("click",async()=>{
+                let val = document.querySelector("#email").value;
+                let pwdVal = document.querySelector("#password").value;
+                if(val == ""){
+                    alert("Email should not be empty");
+                }else if(pwdVal == ''){
+                    alert("password should not be empty");
+                }else{
+                    let data = {
+                      "email": val,
+                      "password": pwdVal
+                    };
+                    let response = await fetch("https://reqres.in/api/login",
+                    {
+                        "headers":{"content-type":"application/json","token":"wefwdfwdfdsfdsf"},//declaring tat we are passing json data
+                        "method":"POST",
+                        'body':JSON.stringify(data)
+                    }
+                    );
+                    if(response.status == 200){
+                        console.log(response.status);
+                        let jsonData = await response.json();
+                        document.querySelector(".response").innerHTML = jsonData['token'];
+                    }else{                    
+                        document.querySelector(".response").innerHTML = "ur email or password is wrong!!!";
+                    }
+                }
+                
+                // console.log(jsonData['token']);
+        })
+    </script>
+</body>
+</html>

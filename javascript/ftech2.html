@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        to communicate to server.below 3 values are needed
+            url, ->https://reqres.in/api/users
+            method type(GET or POST),
+            data  to send
+                if get, data will be passed in the url(query param)
+                if post, data will be passed separate(request body) from the url. 
+        */
+            async function postData(){
+                let txt1 =document.getElementById("txt1").value;
+                if(txt1 == ''){
+                    alert("Name shld not be empty!");
+                }else{
+                    let txt2 =document.getElementById("txt2").value;
+                //javascript object based on server requirement
+                let data = {
+                      "name": txt1,
+                      "job": txt2
+                };
+                let strJSON = JSON.stringify(data);//convert the object to string
+                let response = await fetch("https://reqres.in/api/users",{
+                     "headers":{"content-type":"application/json"},//declaring tat we are passing json data
+                    "method":"POST","body":strJSON}
+                )
+                let jsonData = await response.json();//extract the json data from server's response
+                console.log(jsonData);
+                // document.getElementById('response').innerHTML = JSON.stringify(jsonData);
+                document.getElementById('response').innerHTML = jsonData['createdAt'];
+                }
+                
+            }       
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1" placeholder="Enter Name">
+    <!-- <input type="text" id="txt2" placeholder="Enter Job"> -->
+    <select name="" id="txt2">
+        <option>Manager</option>
+        <option>junior programmer</option>
+        <option>Business Analyst</option>
+    </select>
+    <button onclick="postData()">Post server data</button>
+    <h1 id="response"></h1>
+</body>
+</html>

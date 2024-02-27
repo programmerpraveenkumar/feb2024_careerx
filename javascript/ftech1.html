@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        to communicate to server.below 3 values are needed
+            url, ->https://reqres.in/api/users?page=2
+            method type(GET or POST),
+            data  to send
+                if get, data will be passed in the url(query param)
+                if post, data will be passed separate(request body) from the url. 
+        */
+            async function getData(){
+                let response = await fetch("https://reqres.in/api/users?page=2",{method:"GET"})
+                let jsonData = await response.json();//extract the json data from server's response
+                console.log(jsonData);
+            }
+       
+    </script>
+</head>
+<body>
+    <button onclick="getData()">get server data</button>
+</body>
+</html>
