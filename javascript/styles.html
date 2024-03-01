@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .red{
+                background-color: red;
+                color: #dff;
+            }
+            .blue{
+                background-color: blue;
+                color: #dff;
+            }
+    </style>
+</head>
+<body>
+    <h1>this is heading tag</h1>
+    
+    <button id="red_btn">RED</button>
+    <button id="blue_btn">Blue</button>
+
+    <div>
+        <h1 class="h1_1 red">this is heading tag</h1>
+        <button class="red_blue_btn">RED Or Blue</button>
+    </div>
+    
+    <script>
+       // document.querySelector("h1").classList.add("red");
+       document.querySelector("#red_btn").addEventListener('click',()=>{
+            document.querySelector("h1").classList.remove('blue');
+            document.querySelector("h1").classList.add('red');
+       })
+       document.querySelector("#blue_btn").addEventListener('click',()=>{
+            document.querySelector("h1").classList.remove('red');
+            document.querySelector("h1").classList.add('blue');
+       })
+
+       var bgClass = 'red';
+       document.querySelector(".red_blue_btn").addEventListener('click',()=>{
+        if(bgClass == 'red'){
+            bgClass = 'blue';
+            document.querySelector(".h1_1").classList.remove('red');
+            document.querySelector(".h1_1").classList.add('blue');
+        }else{
+            bgClass = 'red';
+            document.querySelector(".h1_1").classList.remove('blue');
+            document.querySelector(".h1_1").classList.add('red');
+        }            
+       })
+    </script>
+</body>
+</html>

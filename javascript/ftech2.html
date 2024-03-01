@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .error{
+            border: 2px solid red;
+        }
+    </style>
     <script>
         /*
         to communicate to server.below 3 values are needed
@@ -15,10 +20,17 @@
         */
             async function postData(){
                 let txt1 =document.getElementById("txt1").value;
+                let txt2 =document.getElementById("txt2").value;
                 if(txt1 == ''){
-                    alert("Name shld not be empty!");
+                    document.querySelector("#txt1").classList.add("error");
+                    // alert("Name shld not be empty!");
+                }else if(txt2 == ''){
+                    document.querySelector("#txt2").classList.add("error");
+                    // alert("Name shld not be empty!");
                 }else{
-                    let txt2 =document.getElementById("txt2").value;
+                    document.querySelector("#txt1").classList.remove("error");
+                    document.querySelector("#txt2").classList.remove("error");
+
                 //javascript object based on server requirement
                 let data = {
                       "name": txt1,
@@ -42,6 +54,7 @@
     <input type="text" id="txt1" placeholder="Enter Name">
     <!-- <input type="text" id="txt2" placeholder="Enter Job"> -->
     <select name="" id="txt2">
+        <option value="">--select job type--</option>
         <option>Manager</option>
         <option>junior programmer</option>
         <option>Business Analyst</option>

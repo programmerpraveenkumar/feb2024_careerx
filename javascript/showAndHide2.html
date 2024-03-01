@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Enter Email">
+        <span style="display: none;" class="error">Please Enter Email</span>
+    </div>
+    <button>Validate</button>
+    <script>
+        document.querySelector("button").addEventListener("click",()=>{
+             let val = document.querySelector('input').value;
+             if(val == ""){
+                document.querySelector("span").style.display = "inline-block";
+             }else{
+                document.querySelector("span").style.display = "none";
+             }
+        });
+    </script>
+</body>
+</html>

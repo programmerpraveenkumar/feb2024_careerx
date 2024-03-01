@@ -21,8 +21,8 @@
     <div id="div_id">This is div</div>
     <p id="p_id">this is para</p>
     <script>
-        document.getElementById('txt').addEventListener('keyUp',(val)=>{         
-            print(val);
+        document.getElementById('txt').addEventListener('keyup',(ele)=>{         
+            print(ele.target.value);
         })
 
         document.getElementById('div_id').addEventListener('click',()=>{         
@@ -34,6 +34,9 @@
         
         document.getElementById('p_id').addEventListener('keyUp',(val)=>{         
             print(val);
+        })
+        document.getElementById('p_id').addEventListener('wheel',(ele)=>{         
+            console.log(ele);
         })
 
     </script>
