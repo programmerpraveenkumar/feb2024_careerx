@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+    <script>
+        hideH1=()=>{
+            let h1Ele = document.querySelector("h1");
+            h1Ele.classList.toggle("hide");
+        }
+        //executes each interval
+        setInterval(()=>{hideH1()},2000)//1000ms == 1secs
+
+    </script>
+</head>
+<body>
+<h1>hi this will hide in 2 secs</h1>
+</body>
+</html>

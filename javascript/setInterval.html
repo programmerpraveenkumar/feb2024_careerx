@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function printMessage(){
+            console.log("sample message",new Date());
+        }
+        //executes each interval
+        setInterval(()=>{printMessage()},2000)//1000ms == 1secs
+
+
+
+        clockPrint=()=>{
+            document.querySelector("h1").innerHTML = new Date();
+        }
+        setInterval(()=>{clockPrint()},2000)//1000ms == 1secs
+    </script>
+</head>
+<body>
+<h1></h1>
+</body>
+</html>

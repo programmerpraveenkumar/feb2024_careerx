@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        
+        onkeyDown
+        onkeyUp
+     -->
+   
+     
+</head>
+<body>
+    <input id="txt" type="text">
+   
+    <script>
+        document.getElementById('txt').addEventListener('keyup',(ele)=>{ 
+            //keycode is 13 for enter key
+            if(ele.keyCode == 13){
+                let val = ele.target.value;
+                console.log(val);
+                ele.target.value = '';
+            }            
+            /*
+            get the value from textbox.
+            print in the console
+            clear in the textbox.
+            above 3 points should execute in enterkey
+            */   
+          //console.log(ele);
+        })
+
+       
+    </script>
+</body>
+</html>

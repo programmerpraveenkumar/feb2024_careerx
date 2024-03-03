@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: red;
+            color: #fff;
+        }
+
+    </style>
+    <script>
+       
+        setInterval(()=>{printClock()},1000);
+
+        printClock=()=>{
+            let d  = new Date();
+            let val = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+            document.querySelector("h1").innerHTML = val;
+        // console.log("month",d.getMonth()+1);
+        // console.log("year",d.getFullYear());
+        // console.log("date",d.getDate());        //
+        // console.log("Time",val)
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>

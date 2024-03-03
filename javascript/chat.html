@@ -48,6 +48,12 @@
         </div>
     </div>
     <script>
+        document.querySelector("#msg_txt").addEventListener('keyup',(ele)=>{
+                //handling the enter key
+                if(ele.keyCode == 13){
+                        sendMessage();
+                }
+        })
         document.getElementById("btn").addEventListener('click',()=>{
             sendMessage();
         })
