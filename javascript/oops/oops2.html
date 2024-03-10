@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Sample{
+            name = '';   
+            age = "";
+            printDetails(){
+                console.log(this.name,this.age);
+            }
+            getInputValueAndPrint(){
+                let val = document.querySelector("#input_id").value;
+                console.log(val);
+            }
+        }
+        let sampleObj = new Sample();//obj creation 
+        sampleObj.age = '89';//accessing the variables using object
+        sampleObj.name = 'john' ;//accessing the variables using object
+        // sampleObj.printDetails();
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="input_id">
+    <button onclick="sampleObj.getInputValueAndPrint()">Click me</button>
+</body>
+</html>

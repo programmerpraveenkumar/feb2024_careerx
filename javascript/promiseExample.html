@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getPromise(){
+            return new Promise((success,failure)=>{
+                setTimeout(()=>{
+                    success("this is success");
+                },1000)
+            })
+        }
+        async function testPrms(){
+            console.log("prms started",new Date());
+             let res = await getPromise();
+           // let res = await Promise.all([getPromise(2000),getPromise(3000),getPromise(4000)])
+            console.log(res,new Date());
+        }
+        testPrms();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>m

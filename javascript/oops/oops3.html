@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Calculator{
+            add(){
+                let num1 = document.querySelector("#num1").value;
+                let num2 = document.querySelector("#num2").value;
+                let res = parseInt(num1)+parseInt(num2);
+                document.querySelector('#result').innerHTML = "addition is "+res;                    
+            }
+            sub(){
+
+            }
+        }
+
+      let calc = new Calculator();
+
+    </script>
+</head>
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+
+    <button onclick="calc.add()">Add</button>
+    <button onclick="">Sub</button>
+    <h1 id="result"></h1>
+
+</body>
+</html>

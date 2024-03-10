@@ -1,0 +1,13 @@
+classes
+    define the props(variables,methods)
+object creation
+    repsentation of the classes.
+inheritance
+    iheriting props from other classes
+encapsulation
+    no direct access to the variables.
+    setter & getter.
+
+
+
+why oops

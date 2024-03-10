@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1.list the images in array.
+        2.get the path for your images.
+        3.one image tag in the html page
+        4.replace the img src by using js.
+        5.use setInterval for interval of 2secs.
+     -->
+     <style>
+        img{
+            width: 50%;
+            height: 80vh;
+        }
+     </style>
+     <script>
+        var imgArray = ["1.jpg","2.jpeg","3.jpeg","4.jpeg","5.jpg"];
+        var startCount = 0;
+        function changeimg(){
+            if(startCount >= imgArray.length){
+                startCount = 0;
+            }
+            let imgName = imgArray[startCount];
+            document.querySelector("#slider_img").src = "images/"+imgName;
+            startCount++;
+        }
+        setInterval(()=>{changeimg()},2000);
+        //images/
+     </script>
+</head>
+<body>
+    <img id="slider_img" src="images/1.jpg" alt="">
+</body>
+</html>
