@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Forest{
+                name;
+                country;
+        }
+
+        class Lion extends Forest{
+                animalName ='lion';
+        }
+
+        // class Tiger extends Forest{
+        //     animalName ='tiger';
+        // }
+        let lion = new Lion();
+        lion.country = 'africa';//accessing parent class props
+
+        console.log(lion.animalName,lion.country);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

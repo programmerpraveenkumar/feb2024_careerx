@@ -1,0 +1,36 @@
+variable:let var const
+
+use of params or args
+
+function sample(){
+
+}
+
+sample=()=>{
+
+}
+
+events
+click,keyup,mouseOver,
+
+document.getElementById();
+document.querySelector();
+addEventListener()
+
+
+test = async()=>{
+    let res = await fetch()//
+    //json process
+    let data= await res.json();
+}
+
+
+classList.add('test');
+classList.remove('test');
+
+
+setInterVal and setTimeout
+
+index array []
+object array {}
+json

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        storeLocal=()=>{
+                //sessionStorage
+                localStorage.setItem("token","sample token");
+        }
+        getLocal=()=>{
+                        //sessionStorage
+            let val = localStorage.getItem("token");//read the token
+            console.log(val);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="storeLocal()">Set Local</button>
+    <button onclick="getLocal()">get Local</button>
+</body>
+</html>

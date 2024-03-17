@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Details{
+                address;
+                printAddress(){
+                    console.log(this.address);
+                }
+        }
+        //inheriting the props from details class
+        class Person extends Details{
+            constructor(){  
+                super();//parent class constructor           
+                console.log("sample costructor,,..");
+            }
+            main(){
+                this.printAddress();//calling the parent class method without any object
+            }
+        }
+        let personObj = new Person();
+        personObj.address = "sample addres";//accessing the parent class
+        personObj.main();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

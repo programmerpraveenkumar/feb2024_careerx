@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person{            
+            constructor(){
+                let name;
+                let mobileNo;
+            }
+
+            //setter
+            setName(name){
+                this.name = name;
+            }
+
+            setMobile(mobileNo){
+                this.mobileNo = mobileNo;
+            }
+
+            //getter method
+            getName(){
+                return this.name;
+            }
+            getMobileNo(){
+                return this.mobileNo;
+            }
+        }
+        let personObj = new Person();
+        personObj.setMobile("545454");
+        personObj.setName("wdfewf");
+        console.log(personObj.getName());
+        console.log(personObj.getMobileNo());
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

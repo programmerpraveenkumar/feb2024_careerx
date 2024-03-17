@@ -37,6 +37,7 @@
                       "job": txt2
                 };
                 let strJSON = JSON.stringify(data);//convert the object to string
+                
                 let response = await fetch("https://reqres.in/api/users",{
                      "headers":{"content-type":"application/json"},//declaring tat we are passing json data
                     "method":"POST","body":strJSON}
