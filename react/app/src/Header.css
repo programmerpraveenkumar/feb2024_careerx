@@ -1,0 +1,10 @@
+ul li{
+    display: inline-block;
+    margin: 10px;
+}
+ul{
+    background-color: red;
+}
+ul li a{
+        color: #fff;
+}

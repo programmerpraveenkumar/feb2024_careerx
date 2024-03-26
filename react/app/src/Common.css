@@ -1,0 +1,10 @@
+.content{
+    display: flex;
+    flex-direction: row;
+
+}
+.content div{
+    width: 30%;
+    border: 1px solid;
+    height: 50vh;
+}
