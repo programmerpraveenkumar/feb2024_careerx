@@ -3,9 +3,10 @@ import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
-
 import './App.css'
 import Concepts from "./Concepts";
+import Register from "./Register";
+
 const routerConfig = createBrowserRouter([
   {
     path:"/",
@@ -26,6 +27,10 @@ const routerConfig = createBrowserRouter([
   {
   path:"test",
   element:<Concepts/>
+  },
+  {
+  path:"register",
+  element:<Register/>
   }
 ])
 

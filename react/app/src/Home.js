@@ -33,9 +33,9 @@ export default function Home(){
 
             </div>
             {
-                cityDetails.map(obj=>{
+                cityDetails.map((obj,index)=>{
                     
-                       return <p key={obj.firstname}>
+                       return <p key={index}>
                                 <span>{obj.firstname} and the population count is {obj.peopleCount}</span>
                                 <a href="http://google.com">google</a>
                             </p> 
