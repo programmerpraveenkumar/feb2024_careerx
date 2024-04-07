@@ -6,6 +6,8 @@ import Contact from "./Contact";
 import './App.css'
 import Concepts from "./Concepts";
 import Register from "./Register";
+import Login from "./Login";
+import Register1 from "./Register1";
 
 const routerConfig = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const routerConfig = createBrowserRouter([
   {
   path:"register",
   element:<Register/>
+  },
+  {
+  path:"login",
+  element:<Login/>
+  },
+  {
+  path:"register1",
+  element:<Register1/>
   }
 ])
 

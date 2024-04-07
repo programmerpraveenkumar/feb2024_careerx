@@ -4,6 +4,7 @@ export default function Concepts(){
     let input1Ref = useRef();
     const[mobile,setMobile] = useState('65656565');//variable with value
     const[address,setAddress] = useState();//state variable without value
+    const[userList,setUserList] = useState([]);//state variable without value
     const[nameList,setNameList] = useState([ 
         {'firstname':"tstcity",'peopleCount':454},
        {"firstname":"testcity2",'peopleCount':454575},
@@ -21,7 +22,8 @@ export default function Concepts(){
     const getApiData=async ()=>{
         let response = await fetch("https://reqres.in/api/users?page=2",{method:"GET"});
         let res = await response.json();
-        console.log(res);
+        // console.log(res['data']);
+        setUserList(res['data']);
     }
     return (
         <>        
@@ -38,6 +40,17 @@ export default function Concepts(){
                         )
                 })
             }
+            {
+                userList.map((obj,index)=>{
+                        return(
+                            <p key={index}>
+                                <img src={obj.avatar}/>
+                                {obj.first_name}--{obj.last_name}
+                            </p>
+                        )
+                })
+            }
+            <button onClick={()=>getApiData()}>Click to get User Data</button>
         </>
     )
 }

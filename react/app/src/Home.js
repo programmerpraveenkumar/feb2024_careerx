@@ -12,9 +12,14 @@ export default function Home(){
     let cityDetails =[ 
         {'firstname':"tstcity",'peopleCount':454},
        {"firstname":"testcity2",'peopleCount':454575},
-       {"firstname":"testcity3",'peopleCount':8999}
+       {"firstname":"testcity3",'peopleCount':8999},
+       {"firstname":"testcity4",'peopleCount':1999}
      ];
+     //cityDetails[0]['peopleCount']
     //document.getElementByID('id').innnerHTML = firstName;
+    const showCityName=(name)=>{
+            alert(name);
+    }
         return(
         <div>
             <Header/>
@@ -35,10 +40,13 @@ export default function Home(){
             {
                 cityDetails.map((obj,index)=>{
                     
-                       return <p key={index}>
-                                <span>{obj.firstname} and the population count is {obj.peopleCount}</span>
-                                <a href="http://google.com">google</a>
-                            </p> 
+                       return <>
+                                <p key={index}>
+                                    <span className={obj.peopleCount>5000?'red':''}>{obj.firstname} and the population count is {obj.peopleCount}</span>
+                                    <a href="http://google.com">google</a>
+                                </p>
+                                <button onClick={()=>showCityName(obj.firstname)}>Click me</button>
+                            </> 
                     
                 })
             }

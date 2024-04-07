@@ -11,17 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.user-box{
-  width: 50%;
-  border: 1px solid;
-  margin:10px;
-}
-.red{
-  background-color: red;
-  color: #fff;
-}
-.blue{
-  background-color: blue;
-  color:#fff ;
-}
