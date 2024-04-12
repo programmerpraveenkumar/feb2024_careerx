@@ -42,7 +42,8 @@ export default function Home(){
                     
                        return <>
                                 <p key={index}>
-                                    <span className={obj.peopleCount>5000?'red':''}>{obj.firstname} and the population count is {obj.peopleCount}</span>
+                                    <span className={
+                                        '}>{obj.firstname} and the population count is {obj.peopleCount}</span>
                                     <a href="http://google.com">google</a>
                                 </p>
                                 <button onClick={()=>showCityName(obj.firstname)}>Click me</button>
