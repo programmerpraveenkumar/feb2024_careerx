@@ -6,7 +6,7 @@ export default class Home extends Component{
     render(){
         return(
                 <>
-                     <Header/>
+                     <Header currentPage="home"/>
                      <section className="slider_section ">
       <div className="dot_design">
         <img src="assets/images/dots.png" alt=""/>

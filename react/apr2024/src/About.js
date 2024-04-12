@@ -5,7 +5,7 @@ import Footer from "./Footer";
 export default function About(){
             return(
                 <>
-                     <Header/>
+                     <Header currentPage="about"/>
                      <section class="about_section layout_padding">
     <div class="container  ">
       <div class="row">

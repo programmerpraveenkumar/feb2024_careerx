@@ -1,6 +1,7 @@
-export default function Header(){
+export default function Header(props){
     return(
         <>
+       
             <header className="header_section">
       <div className="header_top">
         <div className="container">
@@ -41,23 +42,23 @@ export default function Header(){
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <div className="d-flex mr-auto flex-column flex-lg-row align-items-center">
                 <ul className="navbar-nav  ">
-                  <li className="nav-item active">
+                  <li className={"nav-item "+(props.currentPage=='home'?'active':'')}>
                     <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
                   </li>
-                  <li className="nav-item">
+                  <li className={"nav-item "+(props.currentPage=='about'?'active':'')}>
                     <a className="nav-link" href="/about"> About</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="treatment.html">Treatment</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="doctor.html">Doctors</a>
+                    <a className="nav-link" href="/user">Users</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="testimonial.html">Testimonial</a>
                   </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="contact.html">Contact Us</a>
+                  <li className={"nav-item "+(props.currentPage=='contact'?'active':'')}>
+                    <a className="nav-link" href="/contact">Contact Us</a>
                   </li>
                 </ul>
               </div>
