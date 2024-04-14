@@ -1,10 +1,12 @@
 import { Component, useRef } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
   let emailRef = useRef();
   let pwdRef = useRef();
+  let navigate = useNavigate();
   const loginApi =async ()=>{
     let data = {
       "email": emailRef.current.value,
@@ -14,9 +16,11 @@ export default function Login(){
                 headers:{"content-type":"application/json"}
               });
       let jsonRes = await res.json();
-      if(res.ok){                
-        console.log(jsonRes);
-        alert("login is succesfull")
+      if(res.ok){        
+        //token is the response for login.so storing in localstorage
+        localStorage.setItem("token",jsonRes['token']);  
+        //after login succesful navigate to home page
+        navigate("/home");       
       }else{
         alert(jsonRes['error']);
       }

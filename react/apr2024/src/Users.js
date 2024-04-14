@@ -1,13 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Footer from "./Footer"
 import Header from "./Header"
 
 export default function Users(){
     const[userList,setUserList] = useState([]);
-    const getApi =async ()=>{
-        let res = await fetch("https://reqres.in/api/users?page=1",{method:"GET"})
+    const getApi =async (pageNo)=>{
+        let res = await fetch("https://reqres.in/api/users?page="+pageNo,{method:"GET"})
         let jsonRes = await res.json();
         setUserList(jsonRes['data']);
+    }
+    useEffect(()=>{
+        getApi(1);
+    },[])
+    const changePageNo=(obj)=>{
+      getApi(obj.target.value);
     }
     return(
         <>
@@ -18,10 +24,18 @@ export default function Users(){
         <h2>
           Our <span>User</span>
         </h2>
+        select PageNo
+        <select onChange={(e)=>changePageNo(e)}>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
       </div>
-      <button onClick={()=>getApi()}>get Usr Data</button>
+      {/* <button onClick={()=>getApi()}>get Usr Data</button> */}
       {/* <div class="carousel-wrap ">
         <div class="owl-carousel team_carousel"> */}
+        {userList.length == 0?<h1>No User Found</h1>:''}
          
          {
             userList.map((obj,index)=>{

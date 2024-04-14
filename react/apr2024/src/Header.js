@@ -1,4 +1,22 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function Header(props){
+  let navigate = useNavigate();
+  const logout =()=>{
+    console.log("logout");
+      //remove the token from localstorage
+      //navigate to the login screen
+      localStorage.removeItem("token"); 
+      navigate("/login")
+     }
+     useEffect(()=>{
+      let token = localStorage.getItem("token");
+      if(token == undefined || token == ''){
+        navigate("/login");
+      }
+     },[])
+
     return(
         <>
        
@@ -62,30 +80,25 @@ export default function Header(props){
                   </li>
                 </ul>
               </div>
-              <div className="quote_btn-container">
-                <a href="">
-                  <i className="fa fa-user" aria-hidden="true"></i>
-                  <span>
-                    Login
+              <div onClick={()=>alert('wsef')}>
+
+                  <span >
+                    Logout tst
                   </span>
-                </a>
-                <a href="">
-                  <i className="fa fa-user" aria-hidden="true"></i>
-                  <span>
-                    Sign Up
-                  </span>
-                </a>
-                <form className="form-inline">
+                
+                
+                {/* <form className="form-inline">
                   <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                     <i className="fa fa-search" aria-hidden="true"></i>
                   </button>
-                </form>
+                </form */}
               </div>
             </div>
           </nav>
         </div>
       </div>
     </header>
+    <div onClick={()=>logout()}><span >Logout</span></div>
         </>
     )
 }
