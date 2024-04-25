@@ -6,6 +6,7 @@ import About from './About';
 import Contact from './Contact';
 import Login from './Login';
 import Users from './Users';
+import Contact2 from './Contact2';
 
 let routerConfig = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ let routerConfig = createBrowserRouter([
   },
   {
     path:"/contact",
-    element:<Contact/>
+    element:<Contact2/>
   },
   {
     path:"/login",
@@ -31,6 +32,7 @@ let routerConfig = createBrowserRouter([
 function App() {
   return (
     <div>
+      
       <RouterProvider router={routerConfig}/>      
     </div>
   );

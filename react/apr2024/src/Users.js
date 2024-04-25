@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react"
 import Footer from "./Footer"
 import Header from "./Header"
+import { HttpService } from "./Service/HttpService";
 
 export default function Users(){
     const[userList,setUserList] = useState([]);
+    const http = new HttpService();
+
     const getApi =async (pageNo)=>{
-        let res = await fetch("https://reqres.in/api/users?page="+pageNo,{method:"GET"})
-        let jsonRes = await res.json();
+        let jsonRes = await http.get("users?page="+pageNo)
         setUserList(jsonRes['data']);
     }
+
     useEffect(()=>{
         getApi(1);
     },[])

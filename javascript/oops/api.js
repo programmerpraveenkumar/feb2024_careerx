@@ -1,3 +1,5 @@
+import { test } from "./api2.js";
+
 class Api{
 
     async  getData(){
@@ -9,4 +11,5 @@ class Api{
 let apiObj = new Api();
 document.querySelector("#btn").addEventListener("click",()=>{
     apiObj.getData();
+    test();
 })

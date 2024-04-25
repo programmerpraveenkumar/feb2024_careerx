@@ -1,8 +1,8 @@
-import React, { createRef } from "react";
+import React, { Component, createRef } from "react";
 import UserList from "./UserList";
 
 
-export default class Register1 extends React.Component{
+export default class Register1 extends Component{
     nameRef = createRef();
 	state={
         "firstName":"sample first Name",
@@ -29,6 +29,16 @@ export default class Register1 extends React.Component{
                 <button onClick={()=>this.printMessage()}>Click</button>
                 {/* sharing the data to child compnent */}
                 <UserList userData={this.state.userList}/>
+                {
+           this.state.userList.map((obj,index)=>{
+                return(
+                    <p key={index}>
+                        {obj.first_name}
+                        <img src={obj.avatar}/>
+                    </p>
+                )
+            })          
+        }
             </div>
 		)
     }

@@ -2,24 +2,22 @@ import { Component, useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Contact(){
-  let emailRef = useRef();
+export default function Contact2(){
+  const [name,setName] = useState('');
   const [email,setEmail] = useState('');
-  const updateState=()=>{
-    let emailVal = emailRef.current.value
-    setEmail(emailVal);//update the value from the textbox
+  const contactForm=()=>{
+    console.log(name,email);
+    if(name == ''){
+      alert("Name should nt be empty")
+    }
+    else if(email == ''){
+      alert("Email should nt be empty")
+    }else{
+      alert("everything is fine")
+    }
   }
 
-  //whenver email variable changes below method will get called everytime.
-  useEffect(()=>{
-    console.log("email useEfect -- ",email);
-  },[email])
-
-//below method will call only once during the loading
-  useEffect(()=>{
-    console.log("first time loading -- ");
-  },[])
-            return(
+             return(
                 <>
                 <Header currentPage="contact"/>
 <section className="contact_section layout_padding-bottom">
@@ -32,11 +30,12 @@ export default function Contact(){
       <div className="row">
         <div className="col-md-7">
           <div className="form_container">
+            {name}
               <div>
-                <input ref={emailRef} type="text" placeholder="Full Name" />
+                <input onChange={(e)=>setName(e.target.value)} type="text" placeholder="Full Name" />
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" onChange={(e)=>setEmail(e.target.value)}  placeholder="Email" />
               </div>
               <div>
                 <input type="text" placeholder="Phone Number" />
@@ -45,7 +44,7 @@ export default function Contact(){
                 <input type="text" className="message-box" placeholder="Message" />
               </div>
               <div className="btn_box">
-                <button onClick={()=>updateState()}>
+                <button onClick={()=>contactForm()}>
                   SEND
                 </button>
               </div>

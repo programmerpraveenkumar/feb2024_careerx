@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserService } from "./Service/UserService";
 
 export default function Header(props){
   let navigate = useNavigate();
+  let userService =new UserService();
   const logout =()=>{
     console.log("logout");
       //remove the token from localstorage
@@ -10,16 +12,12 @@ export default function Header(props){
       localStorage.removeItem("token"); 
       navigate("/login")
      }
-     useEffect(()=>{
-      let token = localStorage.getItem("token");
-      if(token == undefined || token == ''){
-        navigate("/login");
-      }
+     useEffect(()=>{      
+      userService.checkToken();
      },[])
 
     return(
         <>
-       
             <header className="header_section">
       <div className="header_top">
         <div className="container">
@@ -40,6 +38,11 @@ export default function Header(props){
               <i className="fa fa-map-marker" aria-hidden="true"></i>
               <span>
                 Location
+              </span>
+            </a>
+            <a href="javascript:void(0)" onClick={()=>logout()}>
+              <span>
+                Logout
               </span>
             </a>
           </div>
@@ -80,13 +83,7 @@ export default function Header(props){
                   </li>
                 </ul>
               </div>
-              <div onClick={()=>alert('wsef')}>
-
-                  <span >
-                    Logout tst
-                  </span>
-                
-                
+              <div>
                 {/* <form className="form-inline">
                   <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                     <i className="fa fa-search" aria-hidden="true"></i>
@@ -98,7 +95,7 @@ export default function Header(props){
         </div>
       </div>
     </header>
-    <div onClick={()=>logout()}><span >Logout</span></div>
+    {/* <div onClick={()=>props.msg()}><span >sample click</span></div> */}
         </>
     )
 }

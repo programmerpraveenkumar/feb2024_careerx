@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { ABOUT_PAGE } from "./Config/AppConstant";
 
 export default function About(){
             return(
@@ -18,7 +19,7 @@ export default function About(){
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                About <span>Hospital</span>
+               {ABOUT_PAGE}
               </h2>
             </div>
             <p>

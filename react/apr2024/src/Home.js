@@ -1,13 +1,16 @@
 import { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { ABOUT_PAGE } from "./Config/AppConstant";
 
 export default class Home extends Component{
-  
+    printMessage(){
+      console.log('this is home component');
+    }
     render(){
         return(
                 <>
-                     <Header currentPage="home"/>
+                     <Header msg={this.printMessage} currentPage="home"/>
                      <section className="slider_section ">
       <div className="dot_design">
         <img src="assets/images/dots.png" alt=""/>
@@ -200,7 +203,7 @@ export default class Home extends Component{
           <div className="detail-box">
             <div className="heading_container">
               <h2>
-                About <span>Hospital</span>
+             {ABOUT_PAGE}
               </h2>
             </div>
             <p>

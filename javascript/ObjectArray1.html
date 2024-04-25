@@ -29,7 +29,9 @@
             var personObj = personDetail[index];
             console.log(index,personObj['name'],personObj['mobile']);
         }
-
+        personDetail.forEach((obj)=>{
+            console.log(obj['name'],obj['mobile']);
+        })
         console.log("---------------------");
         for(let index in personDetail){
             var personObj = personDetail[index];    
