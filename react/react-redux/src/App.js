@@ -1,16 +1,26 @@
 import './App.css';
 import { Provider } from 'react-redux';
-import { storeVal } from './redux/config';
+import { myStore } from './redux/config';
 import Home from './Home';
+import {  RouterProvider, createBrowserRouter } from 'react-router-dom';
+import About from './About';
 
+const routerConfig= createBrowserRouter([
+  {
+    path:"home",
+    element:<Home/>
+  }, {
+    path:"about",
+    element:<About/>
+  }]
+)
 
 
 function App() {
   return (
-    <Provider store={storeVal}>
+    <Provider store={myStore}>
     <div className="App">
-      <h1>Redux </h1>
-      <Home/>
+      <RouterProvider router={routerConfig}/>
     </div>
     </Provider>
   );

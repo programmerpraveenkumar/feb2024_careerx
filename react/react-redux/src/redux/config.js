@@ -1,27 +1,41 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-// export const counterReducer = (state = 1, action) => {
-//     switch (action.type) {
-//       case "INCREMENT":
-//         return state + 1;
-//       case "DECREMENT":
-//         return state - 1;   
-//       default:
-//         return state;
-//     }
-//   };
 
-
-const newReducer=(state=1,action)=>{
-	if(action.type=='increment'){
-		return state+1
-	}else if(action.type=='decrement'){
-		return state-1
-	}else{
-		return state;
+const newReducer=(state=0,action)=>{
+	console.log(action);
+	switch (action.type) {
+		case 'INCREMENT':
+			state= state+1
+		break;
+		case 'DECREMENT':
+			state= state-1
+		break;		
+		default:
+			break;
 	}
+	return state;
 }
-  
-export const storeVal = configureStore({
-  reducer: newReducer
+
+const newReducerCountryName=(state="india",action)=>{
+	switch(action.type){
+		case 'india':
+			return "IN";
+		case 'america':
+			return 'usa';
+		case 'england':
+			return 'uk';
+		default:
+			return "IN";
+	}
+	// return state;
+}
+
+export const myStore = configureStore({
+	reducer:{
+		"counter": newReducer,
+		"country":newReducerCountryName
+	}
 })
+
+
+  
