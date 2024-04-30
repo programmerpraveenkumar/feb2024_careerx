@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import Header from "./Header";
+import Contact from "./Contact";
 
 export default function Home(){
     //read from redux store
@@ -36,7 +37,7 @@ export default function Home(){
             <button onClick={()=>callRedux2()}>DECREMENT</button>
             <button onClick={()=>dispatch({"type":"america"})}>Change country</button>
             {/* <button onClick={()=>callUpdate()}>update Txt</button> */}
-
+            <Contact name={counterVal}/>
         </>
     )
 }

@@ -4,6 +4,7 @@ import { myStore } from './redux/config';
 import Home from './Home';
 import {  RouterProvider, createBrowserRouter } from 'react-router-dom';
 import About from './About';
+import Contact from './Contact';
 
 const routerConfig= createBrowserRouter([
   {
@@ -12,6 +13,9 @@ const routerConfig= createBrowserRouter([
   }, {
     path:"about",
     element:<About/>
+  }, {
+    path:"contact",
+    element:<Contact/>
   }]
 )
 

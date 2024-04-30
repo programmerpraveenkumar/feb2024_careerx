@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Header(){
+    useEffect(()=>{console.log("heading load..");},[])
     return(
         <>
         {/* a tag will refresh the app while navigation.so state will deleted. */}
@@ -14,6 +16,7 @@ export default function Header(){
         */}
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
         </>
     );
 
