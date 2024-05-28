@@ -5,6 +5,110 @@ var {MongoClient} = require('mongodb');
 const MONGODB_URL = 'mongodb://localhost:27017';
 const DATABASE_NAME = 'school';
 const client = new MongoClient(MONGODB_URL);
+router.get("/getStudents",async (req,res)=>{
+    //connect mongodb
+    await client.connect();
+
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //reading the data from the collection and convert into the array
+    let dbResult = await db.collection("students").find({}).toArray();
+    console.log(dbResult);
+    res.status(200).json(dbResult)
+})
+//localhost:8080/user/getStudentsbyEmail?email=sdfsdf@gmail.com
+router.get("/getStudentsbyEmail",async (req,res)=>{
+    // let emailVal = req.query;
+    // console.log(emailVal);
+    //connect mongodb
+    await client.connect();
+
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //reading the data from the collection and convert into the array
+    let dbResult = await db.collection("students").find({"email":'swefw'}).toArray();
+    console.log(dbResult);
+    res.status(200).json(dbResult)
+})
+
+router.post("/createStudent",async (req,res)=>{
+    let {email,name,address} = req.body;
+    let data = {
+        "email":email,
+        "name":name,
+        "address":address,
+    }
+    //connect mongodb
+    await client.connect();
+
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //insert nly one the data from into the collection
+    await db.collection("students").insertOne(data)
+    res.status(200).json({"message":"student created!!"})
+})
+
+router.post("/createMultipleStudents",async (req,res)=>{
+    let data = [];
+    req.body.forEach(element => {
+        let {email,name,address} = element;   
+        data.push(  {
+            "email":email,
+            "name":name,
+            "address":address,
+        });
+    });
+   
+    //connect mongodb
+    await client.connect();
+
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //insert multiple data  into the collection
+    await db.collection("students").insertMany(data)
+    res.status(200).json({"message":"student created!!"})
+})
+
+//localhost:8080/user/deleteStudent
+router.delete("/deleteStudent",async (req,res)=>{
+    let {email} = req.body;
+    let data = {
+        "email":email,       
+    }
+    //connect mongodb
+    await client.connect();
+
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //delete nly one record by email.
+    await db.collection("students").deleteOne(data);
+    res.status(200).json({"message":"student deleted!!"})
+})
+
+router.put("/updateStudentPassword",async (req,res)=>{
+    let {email,password} = req.body;
+
+    let data = {
+        $set:{ "password":password}
+    }
+    let filter = {
+        "email":email
+    }
+    //connect mongodb
+    await client.connect();
+
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //delete nly one record by email.
+    await db.collection("students").updateOne(filter,data);
+    res.status(200).json({"message":"student update!!"})
+})
 
 var details = {
 	"person1":{
