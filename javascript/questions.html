@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var questions = [
+            {
+                "txt":"what is html..?",
+                "options":[
+                    "hyper txt language",
+                    "hyper txt language1",
+                    "hyper txt language2",
+                    "hyper txt language3"
+                ],
+                "answer":""
+            },
+            {
+                "txt":"what is html2..?",
+                "options":[
+                    "hyper txt language",
+                    "hyper txt language1",
+                    "hyper txt language2",
+                    "hyper txt language3"
+                ]
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div id="question_wrap">
+
+    </div>
+    <button>Validate</button>
+</body>
+<script>
+    var tmp ='';
+    questions.forEach((qObj,index)=>{
+        let radioOptions = '';
+        qObj.options.forEach((OptObj)=>{
+                radioOptions += '<div><input name="'+index+'" type="radio"/>'+OptObj+'<div>';
+        });
+        // tmp='<div>'+obj.txt+'</div>';
+         tmp += `<div>${qObj.txt} ${radioOptions}<hr></div>`;
+    })
+    document.getElementById("question_wrap").innerHTML = tmp;
+</script>
+</html>

@@ -9,8 +9,9 @@ import { useState } from 'react';
 
 function App() {
   const [name,setName] = useState('from app.js');
+  const [address,setAddress] = useState('from app.js');
   return (
-    <Context.Provider value={{name,setName}}>
+    <Context.Provider value={{name,setName,address,setAddress}}>
     <div className="App">
       <Header/>
       <Home/>

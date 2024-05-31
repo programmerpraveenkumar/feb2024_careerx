@@ -5,6 +5,7 @@ var {MongoClient} = require('mongodb');
 const MONGODB_URL = 'mongodb://localhost:27017';
 const DATABASE_NAME = 'school';
 const client = new MongoClient(MONGODB_URL);
+//localhost:8080/user/getStudents
 router.get("/getStudents",async (req,res)=>{
     //connect mongodb
     await client.connect();
@@ -19,8 +20,8 @@ router.get("/getStudents",async (req,res)=>{
 })
 //localhost:8080/user/getStudentsbyEmail?email=sdfsdf@gmail.com
 router.get("/getStudentsbyEmail",async (req,res)=>{
-    // let emailVal = req.query;
-    // console.log(emailVal);
+    let {email} = req.query;
+     console.log(email);
     //connect mongodb
     await client.connect();
 
@@ -28,7 +29,7 @@ router.get("/getStudentsbyEmail",async (req,res)=>{
     let db = client.db(DATABASE_NAME);
 
     //reading the data from the collection and convert into the array
-    let dbResult = await db.collection("students").find({"email":'swefw'}).toArray();
+    let dbResult = await db.collection("students").find({"email":email}).toArray();
     console.log(dbResult);
     res.status(200).json(dbResult)
 })

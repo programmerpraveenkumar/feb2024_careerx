@@ -17,6 +17,7 @@ export default function Header(){
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/contact">Contact</NavLink>
+        {/* <a href="/about">About (anchor)</a> */}
         </>
     );
 

@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import './Common.css'
+import CityList from "./CityList";
 
 
 export default function Home(){
@@ -37,18 +38,20 @@ export default function Home(){
                 </div>
 
             </div>
+            <h1>City Details </h1>
             {
-                cityDetails.map((obj,index)=>{
+                <CityList cityDetails={cityDetails}/>
+                // cityDetails.map((obj,index)=>{
                     
-                       return <>
-                                <p key={index}>
-                                    <span>{obj.firstname} and the population count is {obj.peopleCount}</span>
-                                    <a href="http://google.com">google</a>
-                                </p>
-                                <button onClick={()=>showCityName(obj.firstname)}>Click me</button>
-                            </> 
+                //        return <>
+                //                 <p key={index}>
+                //                     <span>{obj.firstname} and the population count is {obj.peopleCount}</span>
+                //                     <a href="http://google.com">google</a>
+                //                 </p>
+                //                 <button onClick={()=>showCityName(obj.firstname)}>Click me</button>
+                //             </> 
                     
-                })
+                // })
             }
             ----------------------------------
             {

@@ -22,6 +22,9 @@ export default function Header(){
             <li>
                 <a href="contact">Contact</a>
             </li>
+            <li>
+                <a href="student">Student</a>
+            </li>
                 <li>
                     <button onClick={()=>logout()}>Logout</button>
             </li>

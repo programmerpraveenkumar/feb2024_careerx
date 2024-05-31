@@ -13,7 +13,11 @@
                 if get, data will be passed in the url(query param)
                 if post, data will be passed separate(request body) from the url. 
         */
-            
+            async function getData(){
+                let res = await fetch("http://localhost:8080/user/user?name=person2",{method:"GET"});
+                let jsonRes = await res.json();
+                console.log(jsonRes);
+            }
        
     </script>
 </head>
