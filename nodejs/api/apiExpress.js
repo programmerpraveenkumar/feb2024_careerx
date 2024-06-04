@@ -1,6 +1,8 @@
 var exp = require('express');
 var app = exp();
 var userApi = require("./ApiModules/User");
+var teacher = require('./ApiModules/Teacher');
+
 var cors = require("cors");
 
 app.use(cors());//accept cross origin requests
@@ -16,6 +18,8 @@ app.use((req,res)=>{
 })
 //all http requests will go via middleware and it reaches the api.
 app.use("/user",userApi);//middleware method
+api.use('/teacher',teacher);
+
 app.listen(8080,()=>{
 console.log("Server started..!!!");    
 })

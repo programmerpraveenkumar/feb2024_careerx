@@ -31,7 +31,7 @@ router.get("/getStudentsbyEmail",async (req,res)=>{
     //reading the data from the collection and convert into the array
     let dbResult = await db.collection("students").find({"email":email}).toArray();
     console.log(dbResult);
-    res.status(200).json(dbResult)
+    res.status(200).json(dbResult);
 })
 
 router.post("/createStudent",async (req,res)=>{
