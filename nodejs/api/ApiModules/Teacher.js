@@ -88,6 +88,16 @@ router.post('/file_upload',upload.single('img'),(req,res)=>{
     res.status(200).json({"message":"file is uploaded!!!"})	
 })
 
+router.get('/logout',teacherAuthentication,async (req,res)=>{
+    await client.connect();
+
+    //token clear in db
+    let db = client.db(DATABASE_NAME);
+    let {email} = req.headers;
+    await db.collection("teachers").updateOne({"email":email},{$set:{ "token":''}});
+    res.status(200).json({"message":"Logout successfull"})	
+})
+
 router.get('/getTeachers',teacherAuthentication,async (req,res)=>{
     await client.connect();
     //select the databse from mongodb server
