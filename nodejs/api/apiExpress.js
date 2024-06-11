@@ -18,7 +18,7 @@ app.use((req,res)=>{
 })
 //all http requests will go via middleware and it reaches the api.
 app.use("/user",userApi);//middleware method
-api.use('/teacher',teacher);
+app.use('/teacher',teacher);
 
 app.listen(8080,()=>{
 console.log("Server started..!!!");    
