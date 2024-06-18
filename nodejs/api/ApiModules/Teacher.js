@@ -178,3 +178,37 @@ module.exports = router;
 
 
 
+// // 
+// app.post("/login",(req,res)=>{
+// 	await client.connect();
+// 	let data ={
+// 		"email":"",//get from request body
+// 		}
+
+//     //select the databse from mongodb server
+//     let db = client.db(DATABASE_NAME);
+
+// 	//if any login attempt is exist or not by the email in mongodb.
+
+
+//     //fetch the user by the email.
+//     let dbResult = await db.collection("tbl_name").find({"email":email}).toArray();
+// 	if(dbResult.length >0){
+// 			if(dbResult[0]['password'] == req['body']['password']){
+				
+// 				res.status(200).json({"message":"u r crct!!!"})				
+// 			}else{
+// 			let login_attempt  = 1;
+// 			// if db has login_attemp add by 1.
+// 			if(!isNaN(dbResult[0]['login_attempt'])){	
+// 				login_attempt  = dbResult[0]['login_attempt']+1;
+// 			}
+			
+// 		await db.collection("tbl_name").updateOne({"email":email},{$set:{ "login_attempt": login_attempt}});
+// 		res.status(400).json({"message":"Password is wrong!!!"})			
+	
+// 		}
+// 	}else{
+// 	    res.status(400).json({"message":"u r wrong!!!"})			
+// 	}
+// })
