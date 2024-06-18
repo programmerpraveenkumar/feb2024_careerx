@@ -1,0 +1,103 @@
+`MONGODB:
+create a database called :: employee
+Collection Name :: employee_details
+
+::API::
+register()
+    store the name,dept,salary,email,address,password
+login()
+    ->email,password
+        if matches->return the json response with jwt token.
+        else return the 400 error.
+
+getmydetails()
+            ->emp_id
+            ->fetch the details by emp_id and send as the response    
+
+
+create databse with Collection
+
+create a new folder
+    npm init `
+
+create a file called api.js
+
+var exp = require('express');
+var app = exp();
+var cors = require("cors");
+
+var {MongoClient} = require('mongodb');
+
+const MONGODB_URL = 'mongodb://localhost:27017';
+const DATABASE_NAME = 'employee';
+const client = new MongoClient(MONGODB_URL);
+
+app.use(cors());//accept cross origin requests
+
+const empTokenValidate=(req,res,next)=>{
+    next();
+}
+
+app.post('/login',async(req,res)=>{
+  let { email,password} = req.body;//from post man or react
+    let data = {
+        "email":email,
+        "password":password,
+    }
+    //connect mongodb
+    await client.connect();
+
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //insert nly one the data from into the collection
+    let res = await db.collection("employee_details").find(data).toArray();
+    if(res.length >0){
+        let token = jwt.sign({"id":res[0]._id},"secret");//,{ expiresIn: '1h' }         
+        res.status(200).json({"message":"successfull","token":token})
+    }else{
+        res.status(400).json({"message":"failure login"})
+    }
+    
+})
+
+//localhost:8080/register
+app.post('/register',async(req,res)=>{
+    let {name,dept,salary,email,address,password} = req.body;//from post man or react
+    let data = {
+        "email":email,
+        "name":name,
+        "dept":dept,
+        "salary":salary,
+        "password":password,
+        "address":address,
+    }
+    //connect mongodb
+    await client.connect();
+
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //insert nly one the data from into the collection
+    await db.collection("employee_details").insertOne(data)
+    res.status(200).json({"message":"Employee created!!"})
+})
+
+app.get('getMyDetails',empTokenValidate,(req,res)=>{
+
+})
+
+
+app.listen(8080,()=>{
+console.log("Server started..!!!");    
+})
+
+react app:
+npx create-react-app emp
+npm i react-router-dom
+    localhost:3000/login->load login component
+                create login form and call the login api by the button click.
+    localhost:3000/register->load register component
+                create register form and call the register api by the button click.
+
+login,register

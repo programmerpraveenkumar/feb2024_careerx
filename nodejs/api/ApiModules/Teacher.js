@@ -71,17 +71,36 @@ router.post("/teacherLogin",async (req,res)=>{
     let existResult =  await db.collection("teachers").find({
                                         "email":body['email'],
                                         "password":body['password']}).toArray();
-    if(existResult.length > 0){
-       let token = jwt.sign({"id":existResult[0]['_id'],"email":existResult[0].email},'secret',{ expiresIn: '1h' });
-        
-       await db.collection("teachers").updateOne({"email":body['email']},{$set:{ "token":token}});
 
-       //correct details
-        res.status(200).json({"message":"yu are correct!!","token":token})	
-    }else{
-        //no result
+app.post("/login",async (req,res)=>{
+	await client.connect();
+	 
+    //select the databse from mongodb server
+    let db = client.db(DATABASE_NAME);
+
+    //fetch the user by the email.
+    let dbResult = await db.collection("teachers").find({"email":email}).toArray();
+	if(dbResult.length >0){
+			if(dbResult[0]['password'] == req['body']['password']){
+                let token = jwt.sign({"id":existResult[0]['_id'],"email":existResult[0].email},'secret',{ expiresIn: '1h' });
+    
+                await db.collection("teachers").updateOne({"email":body['email']},{$set:{ "token":token}});
+				res.status(200).json({"message":"u r crct!!!"})				
+			}else{
+			let login_attempt  = 1;
+			// if db has login_attempt
+			if(!isNaN(dbResult[0]['login_attempt'])){	
+				login_attempt  = dbResult[0]['login_attempt']+1;
+			}
+			
+		await db.collection("teachers").updateOne({"email":email},{$set:{ "login_attempt": login_attempt}});
+		res.status(400).json({"message":"Password is wrong!!!"});	
+	
+		}
+	}else{
         res.status(400).json({"message":"pls provide proper details"})	
-    }
+	}
+})
 });
 
 router.post('/file_upload',upload.single('img'),(req,res)=>{
