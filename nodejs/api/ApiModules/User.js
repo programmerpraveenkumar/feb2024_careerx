@@ -2,9 +2,30 @@ var exp = require('express');
 var router = exp.Router();
 var {MongoClient} = require('mongodb');
 
+var Pdfkit = require('pdfkit');
+const fs = require('fs');
+
 const MONGODB_URL = 'mongodb://localhost:27017';
 const DATABASE_NAME = 'school';
 const client = new MongoClient(MONGODB_URL);
+
+router.get("/pdf_report",(req,res)=>{
+   
+// Create a document
+const doc = new Pdfkit();
+
+// Pipe its output somewhere, like to a file or HTTP response
+// See below for browser usage
+doc.pipe(fs.createWriteStream('output.pdf'));
+
+// Embed a font, set the font size, and render some text
+doc
+  .fontSize(25)
+  .text('Testing the text in pdf file !!!', 100, 100);
+  doc.end();
+  res.sendFile("/Volumes/softwares/projects/careerx2/nodejs/api/output.pdf");
+})
+
 //localhost:8080/user/getStudents
 router.get("/getStudents",async (req,res)=>{
     //connect mongodb

@@ -212,3 +212,19 @@ module.exports = router;
 // 	    res.status(400).json({"message":"u r wrong!!!"})			
 // 	}
 // })
+// login_attempt:
+// 	when user is attempt to login with wrong password for more than 3 times.
+// 	then account will be locked.
+
+
+// 1.confirm the user is exist in the database.
+// 2.validate the dbpassword against the password from the request.
+// 	if above condition matches throw the response with 200 status code.
+// 	else  
+// 	   1.read the exist login_attempt_count from the db
+// 	   2.add +1 with login_attempt_count (from the db)
+// 		if(login_attempt_count field is not exist for the mongo_db_object){
+// 			consider login_attempt_count is 0.
+// 		}
+// 	   3.update the new login_attempt_count in the db 	
+// 	   4.throw the response with 400 status code.
